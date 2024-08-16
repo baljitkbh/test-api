@@ -13,6 +13,7 @@ info:
   logo:
     image: ./wp-content/uploads/2023/01/wpremote.svg
     altText: My logo rocks
+    href: https://wpremote.com
   description: >
     This is an **example** API to demonstrate features of the OpenAPI
     specification.
