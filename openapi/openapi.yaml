@@ -11,7 +11,7 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html  
   x-logo:
-    url: 'https://redocly.github.io/redoc/wpremote.svg'
+    url: 'https://github.com/baljitkbh/test-api/images/wpremote.svg'
     altText: OpenAPI example logo
   description: >
     This is an **example** API to demonstrate features of the OpenAPI
