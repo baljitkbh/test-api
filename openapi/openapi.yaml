@@ -1,4 +1,7 @@
 openapi: 3.1.0
+logo:
+  image: ./images/wpremote.svg
+  altText: Redocly Training
 info:
   version: 1.0.0
   title: Example API
@@ -10,10 +13,6 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html  
-  x-logo:
-    url: 'https://wpremote.com/redoc/example-logo.svg'
-    backgroundColor: '#FFFFFF'
-    altText: 'Example logo'
   description: >
     This is an **example** API to demonstrate features of the OpenAPI
     specification.
