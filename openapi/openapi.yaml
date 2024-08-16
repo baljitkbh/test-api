@@ -11,7 +11,7 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html  
   logo:
-    image: https://wpremote.com/wp-content/uploads/2023/01/wpremote.svg
+    image: ./images/wpremote.svg
     altText: My logo rocks
     href: https://wpremote.com
   description: >
