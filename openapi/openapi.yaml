@@ -10,9 +10,10 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  x-logo:
-    url: 'images/wpremote.svg'
-    altText: OpenAPI example logo
+  logo:
+    image: ./images/wpremote.svg
+    altText: My logo rocks
+  
   description: >
     This is an **example** API to demonstrate features of the OpenAPI
     specification.
