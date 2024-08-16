@@ -9,12 +9,10 @@ info:
     url: http://example.com/contact
   license:
     name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
-  logo:
-    image: ./wp-content/uploads/2023/01/wpremote.svg
-    altText: My logo rocks
-    href: https://wpremote.com
-  
+    url: http://www.apache.org/licenses/LICENSE-2.0.html  
+  x-logo:
+    url: 'https://wpremote.com/wp-content/uploads/2023/01/wpremote.svg'
+    altText: OpenAPI example logo  
   description: >
     This is an **example** API to demonstrate features of the OpenAPI
     specification.
