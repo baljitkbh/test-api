@@ -1,1 +1,43 @@
-
+ScheduledReportsOutputExample:
+  summary: Example response with a list of scheduled reports
+  value:
+    scheduled_reports:
+      - id: PJVacL1jcrWzMdPvHXPJPch6
+        state: ACTIVE
+        started_at: '2024-01-01T00:00:00Z'
+        interval_duration: '1'
+        interval_type: MONTHS
+        next_report_at: '2024-02-01T00:00:00Z'
+        send_to: ['user1@example.com', 'user2@example.com']
+        last_report_at: '2024-01-01T00:00:00Z'
+        last_report_id: MEYTaTaFBUR3h8Tie6QzQtki
+        send_to_client: true
+        timezone: 'America/New_York'
+        site_id: '16b4c3f2'
+        client:
+          name: John Doe
+          email: john.doe@example.com
+      - id: QKWbdM2kdsX5j0WkGYQKRdi7
+        state: INACTIVE
+        started_at: '2024-01-15T00:00:00Z'
+        interval_duration: '2'
+        interval_type: WEEKS
+        next_report_at: '2024-02-12T00:00:00Z'
+        send_to: ['admin@example.com']
+        last_report_at: null
+        last_report_id: null
+        send_to_client: false
+        timezone: 'Europe/London'
+        site_id: '27d5e4g3'
+        client:
+          name: Jane Smith
+          email: jane.smith@example.com
+    meta:
+      page: 1
+      perPage: 20
+      totalPages: 3
+      totalItems: 50
+      filters:
+        site_gids: ['16b4c3f2']
+        state:eq: ACTIVE
+      sort: started_at,desc
