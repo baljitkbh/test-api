@@ -14,19 +14,9 @@ info:
     url: 'https://wpremote.com/wp-content/uploads/2024/08/wpremote-400.svg'
     altText: WP Remote API
   description: >
-    API documentation for managing various resources including sites, custom works, notes, and staging sites
-
     # Introduction
 
-    This API definition is intended to to be a good starting point for
-    describing your API in [OpenAPI/Swagger
-    format](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md).
-
-    It also demonstrates features of the
-    [create-openapi-repo](https://github.com/Redocly/create-openapi-repo) tool
-    and the [Redoc](https://github.com/Redocly/Redoc) documentation engine. Beyond
-    the standard OpenAPI syntax, we use a few 
-    [vendor extensions](https://github.com/Redocly/Redoc/blob/main/docs/redoc-vendor-extensions.md).
+    API documentation for managing various resources including sites, custom works, notes, and staging sites
 
     # OpenAPI Specification
 
