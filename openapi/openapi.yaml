@@ -34,19 +34,19 @@ externalDocs:
   url: 'https://github.com/Redocly/create-openapi-repo'
 tags:
   - name: sites
-    description: Site management
+    description: "Site management"
   - name: custom works
-    description: Custom work management
+    description: "Custom work management"
   - name: notes
-    description: Note management
+    description: "Note management"
   - name: reports
-    description: Report management
+    description: "Report management"
   - name: team
-    description: Team management
+    description: "Team management"
   - name: clients
-    description: Client management
+    description: "Client management"
   - name: staging_sites
-    description: Staging site management
+    description: "Staging site management"
   - name: Echo
     description: "Example echo operations."
   - name: User
