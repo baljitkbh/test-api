@@ -13,7 +13,7 @@ info:
   x-logo:
     url: 'https://wpremote.com/wp-content/uploads/2024/08/wpremote-400.svg'
     altText: OpenAPI example logo
-  description: >
+  description: API documentation for managing various resources including sites, custom works, notes, and staging sites
     This is an **example** API to demonstrate features of the OpenAPI
     specification.
 
