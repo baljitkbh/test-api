@@ -1,0 +1,119 @@
+sites:
+  get:
+    summary: List sites
+    description: Retrieves a list of sites associated with the current account.
+    operationId: getSites
+    tags:
+      - sites
+    parameters:
+      - in: query
+        name: filters[id]
+        schema:
+          type: object
+          $ref: '../components/parameters/filter_operations.yaml#/components/schemas/FilterOperations'
+        description: Filter by site ID
+        example:
+          filters[id:eq]: 'site1234'
+      - in: query
+        name: filters[url]
+        schema:
+          type: object
+          $ref: '../components/parameters/filter_operations.yaml#/components/schemas/FilterOperations'
+        description: Filter by site URL
+        example:
+          filters[url:contains]: 'example.com'
+      - in: query
+        name: filters[plugin_state]
+        schema:
+          type: string
+          allOf:
+            - $ref: '../components/enums/plugin_state.yaml#/PluginState'
+        description: Filter by plugin state
+        example:
+          filters[plugin_state]: 'CONNECTED'
+      - in: query
+        name: filters[created_at]
+        schema:
+          type: object
+          $ref: '../components/parameters/filter_operations.yaml#/components/schemas/FilterOperations'
+        description: Filter by site creation date
+        example:
+          filters[created_at:gt]: '2023-01-01T00:00:00Z'
+      - in: query
+        name: filters[tags]
+        schema:
+          type: array
+          items:
+            type: string
+        description: Filter by tags (comma-separated)
+        example:
+          filters[tags]: 'tag1,tag2'
+      - $ref: '../components/parameters/pagination.yaml#/components/parameters/Page'
+      - $ref: '../components/parameters/pagination.yaml#/components/parameters/PerPage'
+      - $ref: '../components/parameters/sorting.yaml#/components/parameters/Sorting'
+    responses:
+      '200':
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sites:
+                  type: array
+                  items:
+                    $ref: '../components/schemas/site.yaml#/Site'
+                meta:
+                  $ref: '../components/schemas/pagination_meta.yaml#/PaginationMeta'
+            examples:
+              default:
+                $ref: '../components/examples/site/index/output_example.yaml#/SitesIndexOutputExample1'
+      '400':
+        description: Bad request
+      '401':
+        description: Unauthorized
+      '403':
+        description: Forbidden
+    security:
+      - cookieAuth: []
+
+  details:
+    get:
+      summary: Retrieve bulk site details
+      description: Get detailed information about multiple sites.
+      operationId: getBulkSiteDetails
+      tags:
+        - sites
+      parameters:
+        - in: query
+          name: site_ids
+          schema:
+            type: array
+            items:
+              type: string
+          required: true
+          description: The globally unique identifiers for the sites
+          example: ['site1234', 'site5678']
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sites:
+                    type: array
+                    items:
+                      $ref: '../components/schemas/site_detail.yaml#/SiteDetail'
+              examples:
+                default:
+                  $ref: '../components/examples/site/details/output_example.yaml#/SiteDetailsOutputExample1'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - cookieAuth: []
