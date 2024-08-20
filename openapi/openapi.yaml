@@ -41,7 +41,7 @@ tags:
     description: "Example operations reserved for administrators."
   - name: Info
     description: "Example operations for retrieving information."
-  - name: Sites
+  - name: sites
     description: "Site management"
   - name: Tag
     description: "This is a tag description."
@@ -51,7 +51,7 @@ x-tagGroups:
       - User
       - Info
       - Echo
-      - Sites
+      - sites
   - name: Administration
     tags:
       - Admin
