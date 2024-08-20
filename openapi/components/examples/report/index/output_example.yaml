@@ -1,1 +1,45 @@
+NotesGetOutputExample:
+  summary: Example response with a list of notes
+  value:
+    notes:
+      - id: note1
+        content: 'Update site weekly'
+        author: 'user@example.com'
+        created_at: '2024-01-01T10:00:00Z'
+        updated_at: '2024-01-01T10:00:00Z'
+        has_versions: false
+      - id: note2
+        content: 'Check plugin compatibility'
+        author: 'admin@example.com'
+        created_at: '2024-01-02T14:30:00Z'
+        updated_at: '2024-01-03T09:15:00Z'
+        has_versions: true
+      - id: note3
+        content: 'Optimize database queries'
+        author: 'developer@example.com'
+        created_at: '2024-01-05T11:45:00Z'
+        updated_at: '2024-01-05T11:45:00Z'
+        has_versions: false
+    meta:
+      page: 1
+      perPage: 10
+      totalPages: 3
+      totalItems: 27
+      filters:
+        content:contains: 'update'
+        created_at:gt: '2023-12-31'
+      sort: updated_at,desc
 
+NotesGetEmptyOutputExample:
+  summary: Example response with an empty list of notes
+  value:
+    notes: []
+    meta:
+      page: 1
+      perPage: 10
+      totalPages: 0
+      totalItems: 0
+      filters:
+        author:eq: 'nonexistent@example.com'
+        created_at:lt: '2023-01-01'
+      sort: created_at,asc
