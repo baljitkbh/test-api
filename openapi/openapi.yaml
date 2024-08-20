@@ -49,6 +49,7 @@ x-tagGroups:
       - User
       - Info
       - Echo
+      - Sites
   - name: Administration
     tags:
       - Admin
