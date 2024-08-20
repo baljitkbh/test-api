@@ -33,6 +33,20 @@ externalDocs:
   description: "Find out how to create a GitHub repo for your OpenAPI definition."
   url: 'https://github.com/Redocly/create-openapi-repo'
 tags:
+  - name: sites
+    description: Site management
+  - name: custom works
+    description: Custom work management
+  - name: notes
+    description: Note management
+  - name: reports
+    description: Report management
+  - name: team
+    description: Team management
+  - name: clients
+    description: Client management
+  - name: staging_sites
+    description: Staging site management
   - name: Echo
     description: "Example echo operations."
   - name: User
