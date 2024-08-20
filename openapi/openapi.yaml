@@ -60,6 +60,24 @@ servers:
         description: Your tenant id
   - url: https://example.com/api/v1
 paths:
+  /sites:
+    $ref: './paths/sites.yaml#/sites'
+  /sites/details:
+    $ref: './paths/sites.yaml#/sites/details'
+  /sites/{site_id}/custom-works:
+    $ref: './paths/custom_works.yaml#/custom_works'
+  /sites/{site_id}/notes:
+    $ref: './paths/notes.yaml#/notes'
+  /reports:
+    $ref: './paths/reports.yaml#/reports'
+  /reports/scheduled:
+    $ref: './paths/reports.yaml#/reports/scheduled'
+  /team:
+    $ref: './paths/team.yaml#/team'
+  /clients:
+    $ref: './paths/clients.yaml#/clients'
+  /staging_sites:
+    $ref: './paths/staging_sites.yaml#/staging_sites'
   '/users/{username}':
     $ref: 'paths/users_{username}.yaml'
   '/user':
