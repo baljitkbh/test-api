@@ -15,8 +15,7 @@ info:
     altText: OpenAPI example logo
   description: >
     API documentation for managing various resources including sites, custom works, notes, and staging sites
-    This is an **example** API to demonstrate features of the OpenAPI
-    specification.
+    API documentation for managing various resources including sites, custom works, notes, and staging sites
 
     # Introduction
 
