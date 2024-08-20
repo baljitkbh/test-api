@@ -12,9 +12,8 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html  
   x-logo:
     url: 'https://wpremote.com/wp-content/uploads/2024/08/wpremote-400.svg'
-    altText: OpenAPI example logo
+    altText: WP Remote API
   description: >
-    API documentation for managing various resources including sites, custom works, notes, and staging sites
     API documentation for managing various resources including sites, custom works, notes, and staging sites
 
     # Introduction
