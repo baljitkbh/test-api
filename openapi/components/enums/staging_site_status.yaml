@@ -1,0 +1,28 @@
+StagingSiteStatus:
+  type: string
+  description: Represents the current status of a staging site.
+  enum:
+    - INITIALIZING
+    - ACTIVE
+    - CANCELLED
+    - FAILED
+    - DELETED
+    - EXPIRED
+  x-enum-descriptions:
+    - The staging site is being initialized and set up.
+    - The staging site is active and fully operational.
+    - The staging site creation process was cancelled.
+    - The staging site creation or operation has failed.
+    - The staging site has been deleted.
+    - The staging site has expired and is no longer accessible.
+  example: ACTIVE
+  x-display-names:
+    INITIALIZING: Initializing
+    ACTIVE: Active
+    CANCELLED: Cancelled
+    FAILED: Failed
+    DELETED: Deleted
+    EXPIRED: Expired
+  x-usage-notes: >
+    The staging site status affects what actions can be performed on the site.
+    Only ACTIVE sites are fully accessible and operational.

@@ -1,0 +1,9 @@
+ClientState:
+  type: string
+  description: Represents the current state of a client.
+  enum:
+    - CONNECTED
+    - REMOVED
+  x-enum-descriptions:
+    - The client is connected and can access the account's resources.
+    - The client has been removed and no longer has access to the account's resources.

@@ -1,0 +1,12 @@
+UptimeMonitoringStatus:
+  type: string
+  description: Represents the current status of uptime monitoring for a site.
+  enum:
+    - UP
+    - DOWN
+    - UNKNOWN
+  x-enum-descriptions:
+    - The site is currently up and accessible.
+    - The site is currently down or inaccessible.
+    - The uptime status of the site is unknown or could not be determined.
+  example: UP

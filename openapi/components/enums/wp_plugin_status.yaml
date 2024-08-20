@@ -1,0 +1,11 @@
+WpPluginStatus:
+  type: string
+  description: Represents the status of a WordPress plugin.
+  enum:
+    - ACTIVE
+    - INACTIVE
+    - ERROR
+  x-enum-descriptions:
+    - The plugin is currently active.
+    - The plugin is inactive and not loaded.
+    - There was an error loading or activating the plugin.

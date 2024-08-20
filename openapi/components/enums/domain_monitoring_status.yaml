@@ -1,0 +1,21 @@
+DomainMonitoringStatus:
+  type: string
+  description: Represents the domain monitoring status for a site.
+  enum:
+    - HEALTHY
+    - ATTENTION
+    - URGENT
+    - CRITICAL
+    - IMMEDIATE_ACTION
+    - EXPIRING_TOMMORROW
+    - EXPIRED
+    - UNKNOWN
+  x-enum-descriptions:
+    - The domain is registered and active for a long period.
+    - The domain will expire soon.
+    - The domain will expire within a few days.
+    - The domain will expire within a few days and has already triggered an alert to the user.
+    - The domain will expire within a day and has already triggered an alert to the user.
+    - The domain will expire tomorrow and has already triggered an alert to the user.
+    - The domain is expired and has already triggered an alert to the user.
+    - The domain monitoring status is unknown or could not be determined.

@@ -1,0 +1,23 @@
+SslMonitoringStatus:
+  type: string
+  description: Represents the SSL monitoring status for a site.
+  enum:
+    - HEALTHY
+    - ATTENTION
+    - URGENT
+    - CRITICAL
+    - IMMEDIATE_ACTION
+    - EXPIRING_TOMMORROW
+    - EXPIRED
+    - UNKNOWN
+    - INVALID
+  x-enum-descriptions:
+    - SSL certificate is valid and active for a long period.
+    - SSL certificate is valid but will expire soon.
+    - SSL certificate is valid but will expire within a few days.
+    - SSL certificate is valid but will expire within a few days and has already triggered an alert to the user.
+    - SSL certificate is valid but will expire within a day and has already triggered an alert to the user.
+    - SSL certificate will expire tomorrow and has already triggered an alert to the user.
+    - SSL certificate is expired and has already triggered an alert to the user.
+    - SSL monitoring status is unknown or could not be determined.
+    - SSL certificate is invalid or malformed.

@@ -1,0 +1,14 @@
+CustomWorkStatus:
+  type: string
+  description: Represents the current status of a custom work.
+  enum:
+    - ACTIVE
+    - INACTIVE
+  x-enum-descriptions:
+    - The custom work is currently active and visible.
+    - The custom work has been marked as inactive and is not visible.
+  default: ACTIVE
+  example: ACTIVE
+  x-usage-notes: >
+    The custom work status determines whether the work is visible in the system.
+    Only active custom works are displayed to users and included in reports.

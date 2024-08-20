@@ -1,0 +1,15 @@
+SyncStatus:
+  type: string
+  description: Represents the status of the last sync operation.
+  enum:
+    - PENDING
+    - SUCCEEDED
+    - FAILED
+    - CANCELLED
+    - UNKNOWN
+  x-enum-descriptions:
+    - The sync operation is pending.
+    - The sync operation was successful.
+    - The sync operation failed.
+    - The sync operation was cancelled.
+    - The sync status is unknown.

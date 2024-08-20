@@ -1,0 +1,17 @@
+ReportStatus:
+  type: string
+  description: Represents the current status of a report.
+  enum:
+    - RUNNING
+    - COMPLETED
+    - CANCELLED
+    - FAILED
+    - EXPIRED
+    - DELETED
+  x-enum-descriptions:
+    - The report is currently being generated.
+    - The report has been successfully generated and is available.
+    - The report generation was cancelled by the user or system.
+    - The report generation failed due to an error.
+    - The report has expired and is no longer available.
+    - The report has been deleted from the system.

@@ -1,0 +1,11 @@
+VisualMonitoringStatus:
+  type: string
+  description: Represents the visual monitoring status for a site.
+  enum:
+    - UP
+    - DOWN
+    - UNKNOWN
+  x-enum-descriptions:
+    - The visual monitoring is healthy, and no issues have been detected.
+    - The visual monitoring has detected issues, and the site may be experiencing problems.
+    - The visual monitoring status is unknown or could not be determined.

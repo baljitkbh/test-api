@@ -1,0 +1,9 @@
+BackupStatus:
+  type: string
+  description: Represents the status of the last backup operation.
+  enum:
+    - SUCCESSFUL
+    - FAILED
+  x-enum-descriptions:
+    - The backup operation was successful.
+    - The backup operation failed.

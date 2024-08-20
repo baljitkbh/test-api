@@ -1,0 +1,13 @@
+ScheduledReportInterval:
+  type: string
+  description: Represents the interval at which a scheduled report is generated.
+  enum:
+    - DAYS
+    - WEEKS
+    - MONTHS
+    - YEARS
+  x-enum-descriptions:
+    - The report is generated on a daily basis.
+    - The report is generated on a weekly basis.
+    - The report is generated on a monthly basis.
+    - The report is generated on a yearly basis.

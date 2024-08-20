@@ -1,0 +1,14 @@
+ConnectState:
+  type: string
+  description: Represents the connection state of a team member.
+  enum:
+    - Requested
+    - Connected
+    - Rejected
+    - Removed
+  x-enum-descriptions:
+    - The team member has been invited but hasn't accepted yet.
+    - The team member has accepted the invitation and is fully connected.
+    - The team member's invitation was rejected.
+    - The team member has been removed from the team.
+  example: Connected

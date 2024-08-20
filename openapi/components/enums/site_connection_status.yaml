@@ -1,0 +1,9 @@
+SiteConnectionStatus:
+  type: string
+  description: Represents the connection status of a site.
+  enum:
+    - CONNECTED
+    - DISCONNECTED
+  x-enum-descriptions:
+    - The site is connected and can be accessed.
+    - The site is not connected, possibly due to issues with credentials or network.

@@ -1,0 +1,16 @@
+Role:
+  type: string
+  description: Represents the role of a team member within the account.
+  enum:
+    - Owner
+    - Collaborator
+    - Administrator
+    - Client
+    - CoOwner
+  x-enum-descriptions:
+    - The account owner with full access and control.
+    - A team member with limited permissions to manage content.
+    - A team member with extended permissions to manage the account and other team members.
+    - A client user with restricted access to specific features.
+    - A co-owner with nearly full access, similar to the owner.
+  example: Administrator

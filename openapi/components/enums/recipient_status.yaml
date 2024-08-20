@@ -1,0 +1,18 @@
+RecipientStatus:
+  type: string
+  description: Represents the status of a report recipient.
+  enum:
+    - SUCCEEDED
+    - FAILED
+    - OPENED
+    - BOUNCED
+    - DELIVERED
+    - MARKED_AS_SPAM
+  x-enum-descriptions:
+    - The report was successfully sent to the recipient.
+    - The report failed to be sent to the recipient.
+    - The recipient has opened the report.
+    - The report bounced and could not be delivered to the recipient.
+    - The report was delivered to the recipient's inbox.
+    - The report was marked as spam by the recipient or their email system.
+  example: DELIVERED

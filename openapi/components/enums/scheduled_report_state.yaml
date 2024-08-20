@@ -1,0 +1,11 @@
+ScheduledReportState:
+  type: string
+  description: Represents the current state of a scheduled report.
+  enum:
+    - INACTIVE
+    - ACTIVE
+    - DELETED
+  x-enum-descriptions:
+    - The scheduled report is inactive and not generating reports.
+    - The scheduled report is active and generating reports on schedule.
+    - The scheduled report has been deleted and is no longer available.

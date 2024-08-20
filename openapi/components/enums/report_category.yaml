@@ -1,0 +1,9 @@
+ReportCategory:
+  type: string
+  description: Represents the category of a report.
+  enum:
+    - SCHEDULED
+    - ONE_TIME
+  x-enum-descriptions:
+    - A report that is generated on a recurring schedule.
+    - A report that is generated once on demand.

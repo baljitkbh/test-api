@@ -1,0 +1,13 @@
+FirewallStatus:
+  type: string
+  description: Represents the current status of the firewall for a site.
+  enum:
+    - PROTECT
+    - AUDIT
+    - DISABLED
+    - ERROR
+  x-enum-descriptions:
+    - The firewall is actively protecting the site.
+    - The firewall is in audit mode, monitoring but not blocking threats.
+    - The firewall is disabled for this site.
+    - There is an error with the firewall configuration or operation.

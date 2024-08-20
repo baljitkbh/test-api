@@ -1,0 +1,11 @@
+ContentMonitoringStatus:
+  type: string
+  description: Represents the content monitoring status for a site.
+  enum:
+    - UP
+    - DOWN
+    - UNKNOWN
+  x-enum-descriptions:
+    - The content monitoring is healthy, and no issues have been detected.
+    - The content monitoring has detected issues, and the site may be experiencing problems.
+    - The content monitoring status is unknown or could not be determined.
