@@ -42,7 +42,7 @@ tags:
   - name: Info
     description: "Example operations for retrieving information."
   - name: Sites
-    description: "Example echo operations."
+    description: "Site management"
   - name: Tag
     description: "This is a tag description."
 x-tagGroups:
