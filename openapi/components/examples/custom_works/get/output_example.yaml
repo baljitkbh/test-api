@@ -1,1 +1,48 @@
+CustomWorksGetOutputExample:
+  summary: Example response with a list of custom works
+  value:
+    custom_works:
+      - id: cw1
+        title: Initial Site Setup
+        description: Configured basic site settings and installed necessary plugins
+        performed_on: '2024-01-01'
+        status: ACTIVE
+        created_at: '2024-01-01T10:00:00Z'
+        updated_at: '2024-01-01T10:00:00Z'
+      - id: cw2
+        title: Content Migration
+        description: Migrated existing content from old platform to new site
+        performed_on: '2024-01-02'
+        status: ACTIVE
+        created_at: '2024-01-02T14:30:00Z'
+        updated_at: '2024-01-02T14:30:00Z'
+      - id: cw3
+        title: Custom Theme Development
+        description: Developed and implemented a custom theme as per client specifications
+        performed_on: '2024-01-05'
+        status: ACTIVE
+        created_at: '2024-01-05T09:15:00Z'
+        updated_at: '2024-01-05T09:15:00Z'
+    meta:
+      page: 1
+      perPage: 10
+      totalPages: 3
+      totalItems: 27
+      filters:
+        status:eq: ACTIVE
+        performed_on:gt: '2023-12-31'
+      sort: performed_on,desc
 
+CustomWorksGetEmptyOutputExample:
+  summary: Example response with an empty list of custom works
+  value:
+    custom_works: []
+    meta:
+      page: 1
+      perPage: 10
+      totalPages: 0
+      totalItems: 0
+      filters:
+        status:eq: INACTIVE
+        performed_on:lt: '2023-01-01'
+      sort: created_at,asc
