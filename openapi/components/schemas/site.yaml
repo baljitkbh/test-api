@@ -1,0 +1,50 @@
+Site:
+  type: object
+  description: Represents a site in the system
+  properties:
+    id:
+      type: string
+      description: The unique identifier for the site
+      example: site1234
+    title:
+      type: string
+      description: The title of the site
+      example: My Awesome Website
+    url:
+      type: string
+      format: url
+      description: The URL of the site
+      example: https://www.example.com
+    updated_at:
+      type: string
+      format: date-time
+      description: The timestamp when the site was last updated
+      example: '2023-05-20T08:30:00Z'
+    created_at:
+      type: string
+      format: date-time
+      description: The timestamp when the site was created
+      example: '2023-01-01T00:00:00Z'
+    connection:
+      type: object
+      properties:
+        status:
+          $ref: '../enums/site_connection_status.yaml#/SiteConnectionStatus'
+      description: Information about the site's connection status
+    is_paused:
+      type: boolean
+      description: Indicates if the site is currently paused
+      example: false
+    next_sync_at:
+      type: string
+      format: date-time
+      description: The timestamp for the next scheduled sync
+      example: '2023-05-21T08:30:00Z'
+  required:
+    - id
+    - title
+    - url
+    - created_at
+    - updated_at
+    - connection
+    - is_paused

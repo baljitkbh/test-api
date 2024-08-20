@@ -1,0 +1,39 @@
+Note:
+  type: object
+  description: Represents a note in the system.
+  properties:
+    id:
+      type: string
+      description: The unique identifier for the note
+      example: note1
+    content:
+      type: string
+      description: The content of the note
+      example: Update site weekly
+    author:
+      type: string
+      format: email
+      description: The email address of the note's author
+      example: user@example.com
+    created_at:
+      type: string
+      format: date-time
+      description: The timestamp when the note was created
+      example: '2024-01-01T10:00:00Z'
+    updated_at:
+      type: string
+      format: date-time
+      description: The timestamp when the note was last updated
+      example: '2024-01-01T10:00:00Z'
+    has_versions:
+      type: boolean
+      description: Indicates if the note has previous versions
+      example: true
+  required:
+    - content
+    - author
+    - site_id
+  x-usage-notes: >
+    This schema is used for creating, updating, and retrieving note information.
+    The 'id', 'created_at', 'updated_at', and 'has_versions' fields are read-only and should not be included in POST or PUT requests.
+    The 'original_note_id' is only applicable for versioned notes.

@@ -1,0 +1,24 @@
+components:
+  parameters:
+    Sorting:
+      in: query
+      name: sort
+      description: Sorting parameters
+      schema:
+        type: string
+        pattern: '^[a-zA-Z_]+,(asc|desc)$'
+        example: 'created_at,desc'
+      
+  schemas:
+    SortingInfo:
+      type: object
+      properties:
+        field:
+          type: string
+          description: The field to sort by
+          example: 'created_at'
+        direction:
+          type: string
+          enum: [asc, desc]
+          description: The sort direction
+          example: 'desc'

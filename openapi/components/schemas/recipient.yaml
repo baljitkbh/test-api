@@ -1,0 +1,39 @@
+Recipient:
+  type: object
+  description: Represents a recipient of a report.
+  properties:
+    email:
+      type: string
+      format: email
+      description: The email address of the recipient
+      example: user@example.com
+    delivered_at:
+      type: string
+      format: date-time
+      description: The timestamp when the report was delivered to the recipient
+      example: '2024-01-15T10:30:00Z'
+    sent_at:
+      type: string
+      format: date-time
+      description: The timestamp when the report was sent to the recipient
+      example: '2024-01-15T10:29:55Z'
+    opened_at:
+      type: string
+      format: date-time
+      description: The timestamp when the recipient opened the report
+      example: '2024-01-15T11:45:00Z'
+    status:
+      type: string
+      description: The current status of the report delivery to the recipient
+      enum:
+        - SUCCEEDED
+        - FAILED
+        - OPENED
+        - BOUNCED
+        - DELIVERED
+        - MARKED_AS_SPAM
+      example: DELIVERED
+    sender:
+      type: string
+      description: The email address of the sender
+      example: noreply@example.com

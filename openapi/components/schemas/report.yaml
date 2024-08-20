@@ -1,0 +1,54 @@
+Report:
+  type: object
+  description: Represents a report in the system.
+  properties:
+    id:
+      type: string
+      description: The unique identifier for the report
+      example: MEYTaTaFBUR3h8Tie6QzQtki
+    start_date:
+      type: string
+      format: date
+      description: The start date of the report period
+      example: '2024-01-01'
+    end_date:
+      type: string
+      format: date
+      description: The end date of the report period
+      example: '2024-01-31'
+    site_id:
+      type: string
+      description: The ID of the site associated with this report
+      example: '16b4c3f2'
+    category:
+      $ref: '../enums/report_category.yaml#/ReportCategory'
+      description: The category of the report
+      example: SCHEDULED
+    created_at:
+      type: string
+      format: date-time
+      description: The timestamp when the report was created
+      example: '2024-02-01T00:00:00Z'
+    client:
+      $ref: './client.yaml#/Client'
+    recipients:
+      type: object
+      additionalProperties:
+        type: object
+        additionalProperties:
+          type: array
+          items:
+            $ref: './recipient.yaml#/Recipient'
+      description: A nested structure of recipients, grouped by email and sender
+    status:
+      $ref: '../enums/report_status.yaml#/ReportStatus'
+      description: The current status of the report
+      example: COMPLETED
+  required:
+    - id
+    - start_date
+    - end_date
+    - site_id
+    - category
+    - created_at
+    - status

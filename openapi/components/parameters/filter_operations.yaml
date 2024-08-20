@@ -1,0 +1,139 @@
+components:
+  parameters:
+    FilterEq:
+      name: eq
+      in: query
+      description: Exact match filter
+      schema:
+        type: string
+      example: field:eq=value
+
+    FilterNotEq:
+      name: not_eq
+      in: query
+      description: Not equal filter
+      schema:
+        type: string
+      example: field:not_eq=value
+
+    FilterContains:
+      name: contains
+      in: query
+      description: Case-insensitive contains filter
+      schema:
+        type: string
+      example: field:contains=value
+
+    FilterNotContains:
+      name: not_contains
+      in: query
+      description: Case-insensitive not contains filter
+      schema:
+        type: string
+      example: field:not_contains=value
+
+    FilterGt:
+      name: gt
+      in: query
+      description: Greater than filter
+      schema:
+        type: string
+      example: field:gt=value
+
+    FilterLt:
+      name: lt
+      in: query
+      description: Less than filter
+      schema:
+        type: string
+      example: field:lt=value
+
+    FilterGte:
+      name: gte
+      in: query
+      description: Greater than or equal to filter
+      schema:
+        type: string
+      example: field:gte=value
+
+    FilterLte:
+      name: lte
+      in: query
+      description: Less than or equal to filter
+      schema:
+        type: string
+      example: field:lte=value
+
+    FilterIn:
+      name: in
+      in: query
+      description: In array filter (comma-separated values)
+      schema:
+        type: string
+      example: field:in=value1,value2,value3
+
+    FilterNotIn:
+      name: not_in
+      in: query
+      description: Not in array filter (comma-separated values)
+      schema:
+        type: string
+      example: field:not_in=value1,value2,value3
+
+    FilterStartsWith:
+      name: starts_with
+      in: query
+      description: Case-insensitive starts with filter
+      schema:
+        type: string
+      example: field:starts_with=value
+
+    FilterEndsWith:
+      name: ends_with
+      in: query
+      description: Case-insensitive ends with filter
+      schema:
+        type: string
+      example: field:ends_with=value
+
+  schemas:
+    FilterOperations:
+      type: object
+      description: Available filter operations
+      properties:
+        eq:
+          type: string
+          description: Exact match
+        not_eq:
+          type: string
+          description: Not equal
+        contains:
+          type: string
+          description: Case-insensitive contains
+        not_contains:
+          type: string
+          description: Case-insensitive not contains
+        gt:
+          type: string
+          description: Greater than
+        lt:
+          type: string
+          description: Less than
+        gte:
+          type: string
+          description: Greater than or equal to
+        lte:
+          type: string
+          description: Less than or equal to
+        in:
+          type: string
+          description: In array (comma-separated values)
+        not_in:
+          type: string
+          description: Not in array (comma-separated values)
+        starts_with:
+          type: string
+          description: Case-insensitive starts with
+        ends_with:
+          type: string
+          description: Case-insensitive ends with

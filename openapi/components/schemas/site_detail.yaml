@@ -1,0 +1,402 @@
+SiteDetail:
+  type: object
+  description: Provides detailed information about a specific site
+  properties:
+    id:
+      type: string
+      description: The unique identifier for the site
+      example: site1234
+    title:
+      type: string
+      description: The title of the site
+      example: My Awesome Website
+    url:
+      type: string
+      format: url
+      description: The URL of the site
+      example: https://www.example.com
+    updated_at:
+      type: string
+      format: date-time
+      description: The timestamp when the site was last updated
+      example: '2023-05-20T08:30:00Z'
+    created_at:
+      type: string
+      format: date-time
+      description: The timestamp when the site was created
+      example: '2023-01-01T00:00:00Z'
+    connection:
+      type: object
+      properties:
+        status:
+          $ref: '../enums/site_connection_status.yaml#/SiteConnectionStatus'
+      description: Information about the site's connection status
+    client:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the client
+        email:
+          type: string
+          format: email
+          description: The email address of the client
+      description: Information about the client associated with the site
+    notes:
+      type: array
+      items:
+        $ref: '../schemas/Note.yaml#/Note'
+      description: A list of notes associated with the site
+    tags:
+      type: array
+      items:
+        type: string
+      description: A list of tags associated with the site
+    connection:
+      type: object
+      properties:
+        status:
+          $ref: '../enums/site_connection_status.yaml#/SiteConnectionStatus'
+        http_auth:
+          type: object
+          properties:
+            username:
+              type: string
+              description: The username used for HTTP authentication
+      description: Detailed information about the connection status and HTTP authentication
+    sync:
+      type: object
+      properties:
+        last_sync_at:
+          type: string
+          format: date-time
+          description: The timestamp when the site was last synced
+        next_sync_at:
+          type: string
+          format: date-time
+          description: The timestamp for the next scheduled sync
+        last_sync_status:
+          $ref: '../enums/sync_status.yaml#/SyncStatus'
+      description: Information about the synchronization status and schedules
+    server:
+      type: object
+      properties:
+        host:
+          type: string
+          description: The hosting provider of the site
+        mysql_version:
+          type: string
+          description: The version of MySQL used by the site
+        php_version:
+          type: string
+          description: The version of PHP used by the site
+      description: Information about the server hosting the site
+    wp:
+      type: object
+      properties:
+        core:
+          type: object
+          properties:
+            version:
+              type: string
+              description: The version of WordPress core
+            latest_version:
+              type: string
+              description: The latest available version of WordPress core
+            is_vulnerable:
+              type: boolean
+              description: Indicates if the WordPress core is vulnerable
+            vulnerability_info:
+              type: array
+              items:
+                type: object
+                properties:
+                  severity:
+                    type: string
+                  type:
+                    type: string
+                  initial_version:
+                    type: string
+                  fixed_version:
+                    type: string
+        plugins:
+          type: array
+          items:
+            type: object
+            properties:
+              file:
+                type: string
+              title:
+                type: string
+              slug:
+                type: string
+              version:
+                type: string
+              is_active:
+                type: boolean
+              is_vulnerable:
+                type: boolean
+      description: Information about the WordPress core, plugins, and themes
+    settings:
+      type: object
+      properties:
+        is_wp_auto_updates_blocked:
+          type: boolean
+          description: Indicates if WordPress auto-updates are blocked
+        is_woocommerce_db_upgrade_enabled:
+          type: boolean
+          description: Indicates if the WooCommerce database upgrade is enabled
+        sticky_ip:
+          type: string
+          description: The sticky IP setting for the site
+      description: Information about the site's settings
+    backups:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: Indicates if backups are enabled for the site
+        interval:
+          type: string
+          description: The interval at which backups are performed
+        available_backups:
+          type: integer
+          description: The number of available backups
+        retention:
+          type: integer
+          description: The retention period for backups
+        last_backup:
+          type: object
+          properties:
+            created_at:
+              type: string
+              format: date-time
+            status:
+              type: string
+              $ref: '../enums/backup_status.yaml#/BackupStatus'
+            snapshot_id:
+              type: string
+          description: Details of the last backup
+        is_realtime_backup:
+          type: boolean
+          description: Indicates if real-time backups are enabled
+      description: Information about the backup settings and status
+    staging:
+      type: object
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+          format: url
+        status:
+          type: string
+        snapshot_id:
+          type: string
+        is_paused:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+        expires_at:
+          type: string
+          format: date-time
+        php_version:
+          type: string
+      description: Information on the staging site associated with the site
+    security:
+      type: object
+      properties:
+        malware_scanner:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+            status:
+              type: string
+              $ref: '../enums/malware_scanner_status.yaml#/MalwareScannerStatus'
+            interval:
+              type: string
+            next_check_at:
+              type: string
+              format: date-time
+            last_check_at:
+              type: string
+              format: date-time
+            status_changed_at:
+              type: string
+              format: date-time
+            files:
+              type: object
+              properties:
+                total:
+                  type: integer
+                scanned:
+                  type: integer
+            database:
+              type: object
+              properties:
+                total:
+                  type: integer
+                scanned:
+                  type: integer
+            malware:
+              type: object
+              properties:
+                files:
+                  type: integer
+                scripts:
+                  type: integer
+                cron:
+                  type: integer
+          description: Details on the site's malware scanning
+        firewall:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+            status:
+              type: string
+              $ref: '../enums/firewall_status.yaml#/FirewallStatus'
+          description: Details on the site's firewall
+      description: Security details for the site
+    advanced_monitoring:
+      type: object
+      properties:
+        uptime:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+            status:
+              type: string
+              $ref: '../enums/uptime_monitoring_status.yaml#/UptimeMonitoringStatus'
+            interval:
+              type: string
+            next_check_at:
+              type: string
+              format: date-time
+            last_check_at:
+              type: string
+              format: date-time
+            status_changed_at:
+              type: string
+              format: date-time
+        ssl:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+            status:
+              type: string
+              $ref: '../enums/ssl_monitoring_status.yaml#/SSLMonitoringStatus'
+            interval:
+              type: string
+            next_check_at:
+              type: string
+              format: date-time
+            last_check_at:
+              type: string
+              format: date-time
+            valid_from:
+              type: string
+              format: date-time
+            valid_till:
+              type: string
+              format: date-time
+            is_common_name_match:
+              type: boolean
+            is_chain_verified:
+              type: boolean
+        domain:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+            domain:
+              type: string
+            status:
+              type: string
+              $ref: '../enums/domain_monitoring_status.yaml#/DomainMonitoringStatus'
+            next_check_at:
+              type: string
+              format: date-time
+            last_check_at:
+              type: string
+              format: date-time
+            valid_till:
+              type: string
+              format: date-time
+            name_server:
+              type: string
+            registrar:
+              type: string
+        content:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+            no_info_present:
+              type: boolean
+            url:
+              type: string
+              format: url
+            interval:
+              type: string
+            status:
+              type: string
+              $ref: '../enums/content_monitoring_status.yaml#/ContentMonitoringStatus'
+            next_check_at:
+              type: string
+              format: date-time
+            last_check_at:
+              type: string
+              format: date-time
+            keywords:
+              type: object
+              properties:
+                up:
+                  type: array
+                  items:
+                    type: string
+                down:
+                  type: array
+                  items:
+                    type: string
+            resp_code:
+              type: integer
+            error:
+              type: string
+        visual:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+            monitors:
+              type: array
+              items:
+                type: object
+                properties:
+                  url:
+                    type: string
+                    format: url
+                  status:
+                    type: string
+                    $ref: '../enums/visual_monitoring_status.yaml#/VisualMonitoringStatus'
+                  interval:
+                    type: string
+                  next_check_at:
+                    type: string
+                    format: date-time
+                  last_check_at:
+                    type: string
+                    format: date-time
+                  threshold:
+                    type: string
+                  device:
+                    type: string
+                  diff:
+                    type: string
+                  error_code:
+                    type: integer
+      description: Advanced monitoring details for the site

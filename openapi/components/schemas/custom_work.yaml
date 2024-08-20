@@ -1,0 +1,46 @@
+CustomWork:
+  type: object
+  description: Represents a custom work item in the system.
+  properties:
+    id:
+      type: string
+      description: The unique identifier for the custom work
+      example: cw1
+    title:
+      type: string
+      description: The title of the custom work
+      minLength: 1
+      maxLength: 150
+      example: Setup
+    description:
+      type: string
+      description: The description of the custom work
+      maxLength: 500
+      example: Initial site setup
+    performed_on:
+      type: string
+      format: date
+      description: The date when the custom work was performed
+      example: '2024-01-01'
+    status:
+      type: string
+      description: The current status of the custom work
+      $ref: '../enums/custom_work_status.yaml#/CustomWorkStatus'
+      example: ACTIVE
+    created_at:
+      type: string
+      format: date-time
+      description: The timestamp when the custom work was created
+      example: '2024-01-01T10:00:00Z'
+    updated_at:
+      type: string
+      format: date-time
+      description: The timestamp when the custom work was last updated
+      example: '2024-01-01T10:00:00Z'
+  required:
+    - title
+    - performed_on
+  x-usage-notes: >
+    This schema is used for creating, updating, and retrieving custom work information.
+    The 'id' and 'gid' fields are read-only and should not be included in POST or PUT requests.
+    The 'status' field defaults to ACTIVE when creating a new custom work.

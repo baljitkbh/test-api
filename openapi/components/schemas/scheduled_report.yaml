@@ -1,0 +1,70 @@
+ScheduledReport:
+  type: object
+  description: Represents a scheduled report in the system.
+  properties:
+    id:
+      type: string
+      description: The unique identifier for the scheduled report
+      example: PJVacL1jcrWzMdPvHXPJPch6
+    state:
+      $ref: '../enums/scheduled_report_state.yaml#/ScheduledReportState'
+      description: The current state of the scheduled report
+      example: ACTIVE
+    started_at:
+      type: string
+      format: date-time
+      description: The timestamp when the scheduled report was started
+      example: '2024-01-01T00:00:00Z'
+    interval_duration:
+      type: string
+      description: The duration of the reporting interval
+      example: '1'
+    interval_type:
+      $ref: '../enums/scheduled_report_interval.yaml#/ScheduledReportInterval'
+      description: The type of interval for the scheduled report
+      example: MONTHS
+    next_report_at:
+      type: string
+      format: date-time
+      description: The timestamp when the next report is scheduled to be generated
+      example: '2024-02-01T00:00:00Z'
+    send_to:
+      type: array
+      items:
+        type: string
+        format: email
+      description: List of email addresses to send the report to
+      example: ['user1@example.com', 'user2@example.com']
+    last_report_at:
+      type: string
+      format: date-time
+      description: The timestamp when the last report was generated
+      example: '2024-01-01T00:00:00Z'
+    last_report_id:
+      type: string
+      description: The ID of the last generated report
+      example: MEYTaTaFBUR3h8Tie6QzQtki
+    send_to_client:
+      type: boolean
+      description: Indicates whether to send the report to the client
+      example: true
+    timezone:
+      type: string
+      description: The timezone used for scheduling the report
+      example: 'America/New_York'
+    site_id:
+      type: string
+      description: The ID of the site associated with this scheduled report
+      example: '16b4c3f2'
+    client:
+      $ref: './client.yaml#/Client'
+  required:
+    - id
+    - state
+    - started_at
+    - interval_duration
+    - interval_type
+    - next_report_at
+    - send_to
+    - timezone
+    - site_id

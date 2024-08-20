@@ -1,0 +1,68 @@
+TeamMember:
+  type: object
+  description: Represents a team member in the system.
+  properties:
+    id:
+      type: string
+      description: The unique identifier for the team member
+      example: abc123
+    connect_state:
+      type: string
+      description: The connection state of the team member
+      $ref: '../enums/connect_state.yaml#/ConnectState'
+    role:
+      type: string
+      description: The role of the team member
+      $ref: '../enums/role.yaml#/Role'
+    has_all_sites_access:
+      type: boolean
+      description: Indicates if the team member has access to all sites
+      example: true
+    name:
+      type: string
+      description: The name of the team member
+      example: John Doe
+    company_name:
+      type: string
+      description: The company name associated with the team member
+      example: Acme Inc
+    email:
+      type: string
+      format: email
+      description: The email address of the team member
+      example: john.doe@example.com
+    address:
+      type: string
+      description: The address of the team member
+      example: 123 Main St, Anytown, USA
+    note:
+      type: string
+      description: Additional notes about the team member
+      example: Key contact for project X
+    user_login_email:
+      type: string
+      format: email
+      description: The email used for login
+      example: john.login@example.com
+    is_2fa_enabled:
+      type: boolean
+      description: Indicates if two-factor authentication is enabled
+      example: true
+    site_ids:
+      type: array
+      items:
+        type: string
+      description: List of site IDs the team member has access to
+      example: ['site1', 'site2']
+    created_at:
+      type: string
+      format: date-time
+      description: The timestamp when the team member was added
+      example: '2023-01-15T10:30:00Z'
+  required:
+    - id
+    - connect_state
+    - role
+    - name
+    - email
+    - user_login_email
