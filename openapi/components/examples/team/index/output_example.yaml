@@ -1,0 +1,53 @@
+TeamIndexOutputExample:
+  summary: Example response with a list of team members
+  value:
+    team:
+      - id: abc123
+        connect_state: Connected
+        role: Administrator
+        has_all_sites_access: true
+        name: John Doe
+        company_name: Acme Inc
+        email: john.doe@example.com
+        address: 123 Main St, Anytown, USA
+        note: Key contact for project X
+        user_login_email: john.login@example.com
+        is_2fa_enabled: true
+        site_ids: ['site1', 'site2']
+        created_at: '2023-01-15T10:30:00Z'
+      - id: def456
+        connect_state: Connected
+        role: Collaborator
+        has_all_sites_access: false
+        name: Jane Smith
+        company_name: XYZ Corp
+        email: jane.smith@example.com
+        address: 456 Oak Ave, Somewhere, USA
+        note: Graphic designer
+        user_login_email: jane.login@example.com
+        is_2fa_enabled: false
+        site_ids: ['site1']
+        created_at: '2023-02-20T14:45:00Z'
+    meta:
+      page: 1
+      perPage: 20
+      totalPages: 3
+      totalItems: 50
+      filters:
+        role:eq: Administrator
+        created_at:gt: '2023-01-01T00:00:00Z'
+      sort: name,asc
+
+TeamIndexEmptyOutputExample:
+  summary: Example response with an empty list of team members
+  value:
+    team: []
+    meta:
+      page: 1
+      perPage: 20
+      totalPages: 0
+      totalItems: 0
+      filters:
+        connect_state:eq: Removed
+        created_at:lt: '2023-01-01T00:00:00Z'
+      sort: created_at,desc

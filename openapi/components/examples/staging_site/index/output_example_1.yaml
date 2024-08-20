@@ -1,0 +1,56 @@
+StagingSitesIndexOutputExample1:
+  summary: Example response with a list of staging sites
+  value:
+    staging_sites:
+      - gid: 6c8c963b9e7d419a8d895764fe60cbf1
+        snapshot_id: 669a182d37a23463fc8d77fd
+        site_gid: 16b4c3f2
+        created_at: '2024-07-19T13:25:47.000+02:00'
+        expires_at: '2024-08-16T13:28:00.000+02:00'
+        url: https://blogvault424.e.wpstage.net
+        status: ACTIVE
+        is_under_maintenance: false
+        is_suspended: false
+        is_paused: false
+        is_cleared: false
+        php_version: 8.1
+        is_http_auth_enabled: true
+      - gid: 9a912e82e96e484b8052ab658400c95b
+        snapshot_id: f3d0024596624e9f98b15f7c9d67c379
+        site_gid: 16b4c3f2
+        created_at: '2024-07-22T10:20:33.000+02:00'
+        expires_at: '2024-08-19T10:20:33.000+02:00'
+        url: https://blogvault425.e.wpstage.net
+        status: ACTIVE
+        is_under_maintenance: false
+        is_suspended: false
+        is_paused: false
+        is_cleared: false
+        php_version: 8.1
+        is_http_auth_enabled: true
+    meta:
+      page: 1
+      perPage: 50
+      totalPages: 2
+      totalItems: 100
+      filters:
+        site_gid:contains: 16b4c3f2
+        status:eq: ACTIVE
+        created_at:gt: '2024-07-18T13:25:47.000+02:00'
+      sort: created_at,desc
+
+StagingSitesIndexOutputExample2:
+  summary: Example response with an empty list of staging sites
+  value:
+    staging_sites:
+      []
+    meta:
+      page: 1
+      perPage: 50
+      totalPages: 1
+      totalItems: 0
+      filters:
+        site_gid:contains: 9999999
+        status:eq: EXPIRED
+        created_at:gt: '2024-08-01T00:00:00.000+02:00'
+      sort: created_at,asc

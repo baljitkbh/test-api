@@ -1,0 +1,53 @@
+StagingSitesGetOutputExample:
+  summary: Example response with a list of staging sites
+  value:
+    staging_sites:
+      - id: 6c8c963b9e7d419a8d895764fe60cbf1
+        snapshot_id: 669a182d37a23463fc8d77fd
+        site_id: 987654321abcdef
+        created_at: '2023-05-20T08:30:00.000Z'
+        expires_at: '2023-06-20T08:30:00.000Z'
+        url: https://example-staging1.com
+        status: ACTIVE
+        is_under_maintenance: false
+        is_suspended: false
+        is_paused: false
+        is_cleared: false
+        php_version: '7.4'
+        is_http_auth_enabled: true
+      - id: 7d9d074c0f8e52aa9f906875gd71dce2
+        snapshot_id: 770b293e48b34574gd9e88ge
+        site_id: 876543210fedcba
+        created_at: '2023-05-22T10:45:00.000Z'
+        expires_at: '2023-06-22T10:45:00.000Z'
+        url: https://example-staging2.com
+        status: INITIALIZING
+        is_under_maintenance: false
+        is_suspended: false
+        is_paused: false
+        is_cleared: false
+        php_version: '8.0'
+        is_http_auth_enabled: false
+    meta:
+      page: 1
+      perPage: 20
+      totalPages: 5
+      totalItems: 100
+      filters:
+        status:eq: ACTIVE
+        created_at:gt: '2023-05-01T00:00:00.000Z'
+      sort: created_at,desc
+
+StagingSitesGetEmptyOutputExample:
+  summary: Example response with an empty list of staging sites
+  value:
+    staging_sites: []
+    meta:
+      page: 1
+      perPage: 20
+      totalPages: 0
+      totalItems: 0
+      filters:
+        status:eq: EXPIRED
+        created_at:lt: '2023-01-01T00:00:00.000Z'
+      sort: expires_at,asc
