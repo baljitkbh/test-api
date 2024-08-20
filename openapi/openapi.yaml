@@ -75,8 +75,6 @@ paths:
     $ref: paths/pathItemWithExamples.yaml
   '/echo':
     $ref: 'paths/echo.yaml'
-  '/sites':
-    $ref: 'paths/sites.yaml'
 components:
   securitySchemes:
     main_auth:
